@@ -75,7 +75,7 @@ class APTMotor(Controller):
         return [self.linear_range[0], self.linear_range[1]]
 
     def setStageAxisInformation(self, minimumPosition, maximumPosition):
-        self.linear_range = (minimumPosition, maximumPosition)
+        self.linear_range = (minimumPositition, maximumPosition)
 
     def setVelocityParameters(self, minVel, acc, maxVel):
         """Not quite robust right now
