@@ -2,3 +2,4 @@ pyserial==2.7
 pylibftdi
 git+https://github.com/freespace/pyAPT
 zaber.serial
+pyzmq
