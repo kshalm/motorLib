@@ -7,5 +7,6 @@ setup(name='bellMotors',
       author='Krister Shalm',
       packages=['bellMotors', 'bellMotors.pyAPT'],
       install_requires=['pyzmq',
-                        'zaber.serial']
+                        'zaber.serial',
+                        'pylibftdi']
       )
