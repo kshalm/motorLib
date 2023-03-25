@@ -12,13 +12,13 @@ class MotorController(threading.Thread):
         #print("Connecting to motor_server", ip, port)
         self.s = self.context.socket(zmq.REQ)
         self.s.connect("tcp://"+str(ip)+':'+str(port))
-        #self.s.send(b"Test")
+        # self.s.send(b"Test")
         #reply = self._response()
-        #print(reply)
+        # print(reply)
 
         self.id_dict = {}
         self.get_name()
-        #print(self.id_dict)
+        # print(self.id_dict)
 
     def _response(self):
         """Checks if there is an error message."""
@@ -112,9 +112,16 @@ class MotorController(threading.Thread):
             positions[motorName] = pos
         return positions
 
+    def getYaml(self):
+        outMessage = 'ret_config 1'
+        self.s.send(outMessage.encode())
+        reply = self._response()
+        return reply
+
     def close(self):
         self.s.close()
         print("Closed socket.")
+
 
 if __name__ == "__main__":
     mc = MotorController(55000)
